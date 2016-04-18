@@ -8,6 +8,14 @@ import (
 	"strconv"
 )
 
+services := map[int]string {
+	22 :	"SSH Server",
+	53 :	"DNS Server",
+	70 :	"Gopher Server",
+	80 :    "HTTP Server",
+	443 :	"HTTPS Server"
+}
+
 const (
 	TOR_ADDR = "127.0.0.1:9050"
 )
