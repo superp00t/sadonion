@@ -8,12 +8,12 @@ import (
 	"strconv"
 )
 
-services := map[int]string {
+var services = map[int]string {
 	22 :	"SSH Server",
 	53 :	"DNS Server",
 	70 :	"Gopher Server",
 	80 :    "HTTP Server",
-	443 :	"HTTPS Server"
+	443 :	"HTTPS Server",
 }
 
 const (
