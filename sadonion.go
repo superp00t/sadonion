@@ -8,12 +8,19 @@ import (
 	"strconv"
 )
 
-var services = map[int]string {
-	22 :	"SSH Server",
-	53 :	"DNS Server",
-	70 :	"Gopher Server",
-	80 :    "HTTP Server",
-	443 :	"HTTPS Server",
+var services = map[string]string {
+	"22"	:	"SSH Server",
+	"23"	:	"Telnet Server",
+	"25"	:	"SMTP Server",
+	"53"	:	"DNS Server",
+	"70"	:	"Gopher Server",
+	"80"	:	"HTTP Server",
+	"110"	:	"POP3 Server",
+	"143"	:	"IMAP Server",
+	"443"	:	"HTTPS Server",
+	"465"	:	"SSL SMTP Server",
+	"587" 	:	"STARTTLS SMTP Server",
+	"995"	:	"SSL POP3 Server",
 }
 
 const (
@@ -52,7 +59,12 @@ func main() {
 
 		if dialerr == nil {
 			defer conn.Close()
-			fmt.Println("Port ", strport, " is live!")
+
+			if services[strport] == "" {
+				fmt.Println("Port ", strport, " (unknown) ", "is live!")
+			} else {
+				fmt.Println("Port ", strport, " (" + services[strport] + ")", " is live!")
+			}
 		}
 
 	}
