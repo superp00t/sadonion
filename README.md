@@ -6,4 +6,4 @@ at the moment, it's kind of slow, but I'm working to make it faster.
 
 to install:
 
-    go get golang.org/x/net/proxy && go get gitgud.io/superp00t/sadonion
+    go get -u gitgud.io/superp00t/sadonion
